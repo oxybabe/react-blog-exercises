@@ -86,5 +86,4 @@ function BookmarkApp() {
     </>
   );
 }
-
 export default BookmarkApp;

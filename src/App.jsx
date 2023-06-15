@@ -20,13 +20,13 @@ function App() {
   if (page === 3) {
     content = <BlogReading />;
   }
+  // if (page === 4) {
+  //   content = <Bookmarking />;
+  // }
   if (page === 4) {
-    content = <Bookmarking />;
-  }
-  if (page === 5) {
     content = <BlogCMSE />;
   }
-  if (page === 6) {
+  if (page === 5) {
     content = <BookmarkApp />;
   }
 
@@ -37,7 +37,7 @@ function App() {
       <button onClick={() => setPage(3)}>Blog Reading</button>
       <button onClick={() => setPage(4)}>Bookmarking</button>
       <button onClick={() => setPage(5)}>Blog CMSE</button>
-      <button onClick={() => setPage(6)}>Bookmark APP</button>
+      {/* <button onClick={() => setPage(6)}>Bookmark APP</button> */}
 
       <div>{content}</div>
     </>

@@ -21,7 +21,6 @@ export default function PersonInfo() {
     setAddress("");
     setPhone("");
   }
-
   return (
     <>
       <div>Enter Personal Information</div>
@@ -50,7 +49,6 @@ export default function PersonInfo() {
         />
         <button type="submit">Submit</button>
       </form>
-      
     </>
   );
 }

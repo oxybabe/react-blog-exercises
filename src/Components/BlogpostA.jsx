@@ -45,8 +45,8 @@ export default function BlogPost() {
       </form>
       {blogPosts.map((blogPost) => (
         <>
-          <div>{blogPost.title}</div>
-          <div>{blogPost.body}</div>
+          <div>Title:{blogPost.title}</div>
+          <div>Body:{blogPost.body}</div>
         </>
       ))}
     </>

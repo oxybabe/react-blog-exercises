@@ -8,7 +8,7 @@ export default function BlogReading() {
   return (
     <>
       <div>Blog Reading</div>
-      <button onClick={() => setBlogList()}>{setPostTitle}</button>
+      <button onClick={() => setBlogList()}>Title:{setPostTitle}</button>
     </>
   );
 }
