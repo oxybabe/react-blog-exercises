@@ -1,5 +1,6 @@
 import { useState } from "react";
-function BlogDetail({ blogPost, updateBlog }) {
+function BlogDetail({ blogPost, updateBlog, deleteBlog }) {
+  //pulling the props from BlogDetail
   const [isEditing, setIsEditing] = useState(false); //boolean, setting it to false
   const [editedBlog, setEditedBlog] = useState({ ...blogPost });
 
@@ -13,12 +14,34 @@ function BlogDetail({ blogPost, updateBlog }) {
               type="text"
               required
               value={editedBlog.title}
-              onChange={setEditedBlog}
+              onChange={(e) =>
+                setEditedBlog({
+                  ...editedBlog,
+                  title: e.target.value,
+                })
+              }
               style={{ marginBottom: "10px" }}
             />
-            <div>Post:{blogPost.body}</div>
+            <input
+              name="body"
+              type="text"
+              value={editedBlog.body}
+              onChange={(e) =>
+                setEditedBlog({
+                  ...editedBlog, //spreading the blog body and id to be able to update blog title
+                  body: e.target.value,
+                })
+              }
+            >
+              {/* Post:{blogPost.body} */}
+            </input>
             <div>Id:{blogPost.id}</div>
-            <button onClick={() => updateBlog(editedBlog)} type="update">
+            <button
+              onClick={() => {
+                updateBlog(editedBlog), setIsEditing(false);
+              }}
+              type="update"
+            >
               Update
             </button>
             <button onClick={() => deleteBlog(blogPost.id)} type="delete">

@@ -39,9 +39,7 @@ export default function BlogCMSE() {
     setBlogPosts(updatedBlogPosts);
   }
   function updateBlog(updatedBlog) {
-    const index = blogPosts.findIndex(
-      (blog) => blog.id === updatedBlog.id
-    );
+    const index = blogPosts.findIndex((blog) => blog.id === updatedBlog.id);
     const updatedBlogPosts = [...blogPosts];
     updatedBlogPosts[index] = updatedBlog;
     setBlogPosts(updatedBlogPosts);
@@ -77,7 +75,12 @@ export default function BlogCMSE() {
         <button type="submit">Submit</button>
       </form>
       {blogPosts.map((blogPost) => (
-        <BlogDetail blogPost={blogPost} updateBlog={updateBlog} />
+        <BlogDetail
+          blogPost={blogPost}
+          updateBlog={updateBlog}
+          deleteBlog={deleteBlog}
+        />
+        //passed the props to be able to pull in blogDetail
       ))}
     </>
   );
