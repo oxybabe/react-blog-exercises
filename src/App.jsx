@@ -4,12 +4,12 @@ import BlogPost from "./Components/BlogpostA";
 import PersonInfo from "./Components/PersonInfoB";
 import BlogReading from "./Components/BlogreadingC";
 import Bookmarking from "./Components/BookmarkingD";
-import BlogCMSE from "./Components/BlogCMSE";
+import BlogCMSE from "./Components/BlogCMSE/BlogCMSE";
 import BookmarkApp from "./Components/BookmarkApp";
 import "./App.css";
 
 function App() {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(5);
   let content;
   if (page === 1) {
     content = <BlogPost />;
@@ -20,14 +20,11 @@ function App() {
   if (page === 3) {
     content = <BlogReading />;
   }
-  // if (page === 4) {
-  //   content = <Bookmarking />;
-  // }
   if (page === 4) {
-    content = <BlogCMSE />;
+    content = <BookmarkApp />;
   }
   if (page === 5) {
-    content = <BookmarkApp />;
+    content = <BlogCMSE />;
   }
 
   return (
